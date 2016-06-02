@@ -51,7 +51,6 @@ public class Window extends JFrame implements ActionListener{
   }
 
    public void actionPerformed(ActionEvent arg0) {
-
+     //args here later
    }
-
 }

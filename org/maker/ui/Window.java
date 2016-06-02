@@ -16,10 +16,10 @@ import org.maker.levels.Importt ;
 import org.maker.levels.Grid ;
 
 public class Window extends JFrame implements ActionListener{
-  final int tX =1000;
-  final int tY =600;
+  final static int tX =1000;
+  final static int tY =600;
   JPanel container = new JPanel() ;
-  Content p = new Content() ;
+  Content p ;
   Menu menu =new Menu() ;
   Push p1 = new Push("brique");
 
@@ -29,7 +29,10 @@ public class Window extends JFrame implements ActionListener{
     setSize(tX,tY);
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     setLocationRelativeTo(null);
-    setResizable(false);
+  //  setResizable(false);
+    Grid g =new Grid(100,100);
+    p =  new Content(g);
+
     container.setBackground(Color.white);
 		container.setLayout(new BorderLayout());
     container.add(p, BorderLayout.CENTER);
@@ -47,7 +50,7 @@ public class Window extends JFrame implements ActionListener{
     });
     Menu.item2.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent event) {
-        Grid g =new Grid(10,10);
+
          Importt.record(g,"test") ;
       }
     });

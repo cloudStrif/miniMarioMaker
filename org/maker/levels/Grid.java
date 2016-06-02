@@ -1,8 +1,8 @@
 package org.maker.levels ;
 
 public class Grid{
-    String [][] field;
-    String [][] camera;
+    public String [][] field;
+    public String [][] camera;
     int s ;
     int s2 ;
 
@@ -10,8 +10,8 @@ public class Grid{
       this.s=s;
       this.s2=s2;
       field = new String[s][s2];
-      camera =new String[8][14];//arbitrary
-      init(8,14,camera);
+      camera =new String[18][24];//arbitrary
+      init(18,24,camera);
       init(s,s2,field);
 
     }

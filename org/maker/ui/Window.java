@@ -12,7 +12,8 @@ import java.awt.Color;
 import javax.swing.JButton;
 
 import org.maker.ui.Menu ;
-
+import org.maker.levels.Importt ;
+import org.maker.levels.Grid ;
 
 public class Window extends JFrame implements ActionListener{
   final int tX =1000;
@@ -39,7 +40,17 @@ public class Window extends JFrame implements ActionListener{
     north.add(p1);
 
     container.add(north , BorderLayout.NORTH);
-
+    Menu.item1.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent event) {
+         Importt.charger() ;
+      }
+    });
+    Menu.item2.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent event) {
+        Grid g =new Grid(10,10);
+         Importt.record(g,"test") ;
+      }
+    });
     Menu.item3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
 				dispose();

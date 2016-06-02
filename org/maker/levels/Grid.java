@@ -11,12 +11,15 @@ public class Grid{
       this.s2=s2;
       field = new String[s][s2];
       camera =new String[8][14];//arbitrary
+      init(8,14,camera);
+      init(s,s2,field);
+
     }
 
-    public void init (){
-      for(int i=0;i<8;i++){
-        for(int j=0;j<14;j++){
-          camera[i][j]="N";
+    public void init (int v ,int y,String[][] str){
+      for(int i=0;i<v;i++){
+        for(int j=0;j<y;j++){
+          str[i][j]="N";
         }
       }
     }

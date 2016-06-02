@@ -19,9 +19,8 @@ public class Push extends JButton {
         ImageIcon i1 = new ImageIcon("org/maker/ressources/tiles/r3.png");
 				Image ii1= i1.getImage();
 				g.drawImage(ii1,0,0,40,30,this);
-         System.out.println("default case ...");
       break ;
-
+      default: System.out.println("no more push");
     }
   }
 

@@ -10,10 +10,12 @@ import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import javax.swing.JButton;
+import java.util.ArrayList ;
 
 import org.maker.ui.Menu ;
 import org.maker.levels.Importt ;
 import org.maker.levels.Grid ;
+import org.maker.ui.Mousse ;
 
 public class Window extends JFrame implements ActionListener{
   final static int tX =1000;
@@ -21,6 +23,8 @@ public class Window extends JFrame implements ActionListener{
   JPanel container = new JPanel() ;
   Content p ;
   Menu menu =new Menu() ;
+  String [] tabName ={"brique"} ;
+  ArrayList<Push> buttons = new ArrayList<Push>() ;
   Push p1 = new Push("brique");
   Grid g;
 
@@ -29,7 +33,12 @@ public class Window extends JFrame implements ActionListener{
     setSize(tX,tY);
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     setLocationRelativeTo(null);
-  //  setResizable(false);
+    for(int i=0; i<tabName.length;i++){
+      Push pp =new Push(tabName[i]);
+      buttons.add(pp);
+    }
+
+    setResizable(false);
     g = new Grid(100,100);
     p =  new Content(g);
 
@@ -37,11 +46,13 @@ public class Window extends JFrame implements ActionListener{
 		container.setLayout(new BorderLayout());
     container.add(p, BorderLayout.CENTER);
 
-    p1.addActionListener(this);
+
 
     JPanel north = new JPanel();
-    north.add(p1);
-
+    for(int i=0;i<tabName.length;i++){
+      buttons.get(i).addActionListener(this);
+      north.add(buttons.get(i));
+    }
     container.add(north , BorderLayout.NORTH);
     Menu.item1.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent event) {
@@ -66,9 +77,9 @@ public class Window extends JFrame implements ActionListener{
 
    public void actionPerformed(ActionEvent arg0) {
      //args here later
-     if(arg0.getSource() == p1){
-       System.out.println("pn");
-
+     if(arg0.getSource() == buttons.get(0)){
+       System.out.println("push Brique ! ");
+       Mousse.TYPE="B";
      }
    }
 }

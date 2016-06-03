@@ -8,6 +8,7 @@ import javax.swing.JButton;
 
 public class Push extends JButton {
   private String name ;
+  public static String PATH ="org/maker/ressources/";
 
   public Push(String name){
     super("b");
@@ -18,7 +19,7 @@ public class Push extends JButton {
   public void paintComponent(Graphics g){
     switch(name){
       case "brique" :
-        ImageIcon i1 = new ImageIcon("org/maker/ressources/tiles/r3.png");
+        ImageIcon i1 = new ImageIcon(PATH+"tiles/r3.png");
 				Image ii1= i1.getImage();
 				g.drawImage(ii1,0,0,30,30,this);
       break ;

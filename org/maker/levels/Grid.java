@@ -6,6 +6,9 @@ public class Grid{
     int s ;
     int s2 ;
 
+    int posXinit =0 ;
+    int posYinit =0 ;
+
     public Grid (int s , int s2){
       this.s=s;
       this.s2=s2;
@@ -16,11 +19,20 @@ public class Grid{
 
     }
 
+    public void refresh(){
+      for(int i=posYinit;i<posYinit+18;i++){
+        for(int j=posXinit;j<posXinit+24;j++){
+          camera[i][j]=field[i][j];
+        }
+      }
+    }
+
     public void init (int v ,int y,String[][] str){
-      for(int i=0;i<v;i++){
-        for(int j=0;j<y;j++){
+      for(int i=posYinit;i<v;i++){
+        for(int j=posXinit;j<y;j++){
           str[i][j]="N";
         }
       }
     }
+
 }

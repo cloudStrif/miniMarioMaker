@@ -27,7 +27,7 @@ public class Content extends JPanel{
       for(int i=0;i<18;i++){
         for(int j=0;j<24;j++){
           if (grid.camera[i][j].equals("N")) {
-            g.setColor(Color.BLUE);
+            g.setColor(new Color(111,233,111));
             g.fillRect(x,y,(int)(1000/24)-1,(int)(600/18)-1);
           }
           x+=(int)(1000/24);

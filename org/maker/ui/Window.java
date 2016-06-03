@@ -17,7 +17,7 @@ import org.maker.levels.Grid ;
 
 public class Window extends JFrame implements ActionListener{
   final static int tX =1000;
-  final static int tY =600;
+  final static int tY =650;
   JPanel container = new JPanel() ;
   Content p ;
   Menu menu =new Menu() ;
@@ -66,5 +66,8 @@ public class Window extends JFrame implements ActionListener{
 
    public void actionPerformed(ActionEvent arg0) {
      //args here later
+     if(arg0.getSource() == p1){
+       System.out.println("pn");
+     }
    }
 }

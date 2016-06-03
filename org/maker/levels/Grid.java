@@ -3,6 +3,7 @@ package org.maker.levels ;
 public class Grid{
     public String [][] field;
     public String [][] camera;
+    public boolean [][] clignote ;
     int s ;
     int s2 ;
 
@@ -14,6 +15,7 @@ public class Grid{
       this.s2=s2;
       field = new String[s][s2];
       camera =new String[18][24];//arbitrary
+      clignote=new boolean[18][24];//all in false at the begining
       init(18,24,camera);
       init(s,s2,field);
 

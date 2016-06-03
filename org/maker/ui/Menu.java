@@ -26,7 +26,6 @@ public class Menu extends JMenuBar{
         public void actionPerformed(ActionEvent event) {
           Grid g = Importt.charger(Window.g) ;
           p.grid.camera = g.camera ;
-
         }
     });
     item2.addActionListener(new ActionListener() {

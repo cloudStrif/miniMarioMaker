@@ -22,7 +22,7 @@ public class Window extends JFrame implements ActionListener{
   final static int tY =650;
   JPanel container = new JPanel() ;
   Content p ;
-  Menu menu =new Menu(p) ;
+  Menu menu ;
   String [] tabName ={"brique","delete"} ;
   ArrayList<Push> buttons = new ArrayList<Push>() ;
   Push p1 = new Push("brique");
@@ -39,8 +39,10 @@ public class Window extends JFrame implements ActionListener{
     }
 
     setResizable(false);
+    //Init Grid (use it each time)
     g = new Grid(100,100);
     p =  new Content(g);
+    menu =new Menu(p) ;
 
     container.setBackground(Color.white);
 		container.setLayout(new BorderLayout());

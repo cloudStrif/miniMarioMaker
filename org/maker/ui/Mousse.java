@@ -15,18 +15,25 @@ public class Mousse{
 
         content.addMouseListener(new MouseAdapter(){
             public void mousePressed(MouseEvent e){
-              System.out.println("mlmlml"+e.getX() );
+                try{
                 content.grid.camera[(int)(e.getY()/(600/18))][(int)(e.getX()/(1000/24))]=TYPE ;
                 content.grid.field[(int)(content.grid.posYinit+(e.getY()/(600/18)))][(int)(content.grid.posXinit+(e.getX()/(1000/24)))]=TYPE ;
                 content.repaint();
+              }catch(Exception ex){
+                System.out.println("Out of ring !");
+              }
             }
           });
 
        content.addMouseMotionListener(new MouseMotionListener(){
             public void mouseDragged(MouseEvent e) {
+              try{
               content.grid.camera[(int)(e.getY()/(600/18))][(int)(e.getX()/(1000/24))]=TYPE ;
               content.grid.field[(int)(content.grid.posYinit+(e.getY()/(600/18)))][(int)(content.grid.posXinit+(e.getX()/(1000/24)))]=TYPE ;
               content.repaint();
+            }catch(Exception ex){
+              System.out.println("Out of ring !");
+            }
             }
 
             public void mouseMoved(MouseEvent e) {

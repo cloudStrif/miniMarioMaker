@@ -17,6 +17,7 @@ public class Mousse{
             public void mousePressed(MouseEvent e){
               System.out.println("mlmlml"+e.getX() );
                 content.grid.camera[(int)(e.getY()/(600/18))][(int)(e.getX()/(1000/24))]=TYPE ;
+                content.grid.field[(int)(content.grid.posYinit+(e.getY()/(600/18)))][(int)(content.grid.posXinit+(e.getX()/(1000/24)))]=TYPE ;
                 content.repaint();
             }
           });
@@ -24,6 +25,7 @@ public class Mousse{
        content.addMouseMotionListener(new MouseMotionListener(){
             public void mouseDragged(MouseEvent e) {
               content.grid.camera[(int)(e.getY()/(600/18))][(int)(e.getX()/(1000/24))]=TYPE ;
+              content.grid.field[(int)(content.grid.posYinit+(e.getY()/(600/18)))][(int)(content.grid.posXinit+(e.getX()/(1000/24)))]=TYPE ;
               content.repaint();
             }
 

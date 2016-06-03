@@ -14,7 +14,7 @@ import java.awt.Image;
 
 public class Content extends JPanel{
 
-  static Grid grid ;
+  public static Grid grid ;
 
 
   int x = 0 ;

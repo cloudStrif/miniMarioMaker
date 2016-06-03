@@ -13,24 +13,40 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 
 import org.maker.levels.Grid ;
+import org.maker.ui.Content ;
 
 public class Importt {
   public Importt(){
-    charger();
+  //  charger();
   }
 
-  public static  void charger(){
+  public static Grid charger(Grid g){
   JFileChooser JFC = new JFileChooser();
   int returnVal = JFC.showOpenDialog(null);
   if (returnVal == JFileChooser.APPROVE_OPTION) {
     try {
       String chemin=JFC.getSelectedFile().toString();
       File fw = new File(chemin);
-      af(chemin);
+      String recup=af(chemin);
+      int inc =0 ;
+
+      for(int i=0 ;i<Grid.s;i++){
+        for(int j=0; j<Grid.s2+1;j++){
+          if(recup.charAt(inc) != '\n'){
+            g.field[i][j]=recup.charAt(inc)+"";
+            System.out.print(g.field[i][j]);
+          }
+          inc++;
+        }
+        System.out.println();
+      }
+      g.refresh() ;
     } catch (Exception ex) {
       ex.printStackTrace();
     }
+
   }
+    return g ;
 }
 
 public static String af(String ss) {

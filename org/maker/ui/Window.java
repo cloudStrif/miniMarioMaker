@@ -22,11 +22,11 @@ public class Window extends JFrame implements ActionListener{
   final static int tY =650;
   JPanel container = new JPanel() ;
   Content p ;
-  Menu menu =new Menu() ;
-  String [] tabName ={"brique"} ;
+  Menu menu =new Menu(p) ;
+  String [] tabName ={"brique","delete"} ;
   ArrayList<Push> buttons = new ArrayList<Push>() ;
   Push p1 = new Push("brique");
-  Grid g;
+  static Grid g;
 
   public Window(){
     setTitle("Mini Mario Maker");
@@ -46,25 +46,12 @@ public class Window extends JFrame implements ActionListener{
 		container.setLayout(new BorderLayout());
     container.add(p, BorderLayout.CENTER);
 
-
-
     JPanel north = new JPanel();
     for(int i=0;i<tabName.length;i++){
       buttons.get(i).addActionListener(this);
       north.add(buttons.get(i));
     }
     container.add(north , BorderLayout.NORTH);
-    Menu.item1.addActionListener(new ActionListener() {
-      public void actionPerformed(ActionEvent event) {
-         Importt.charger() ;
-      }
-    });
-    Menu.item2.addActionListener(new ActionListener() {
-      public void actionPerformed(ActionEvent event) {
-
-         Importt.record(g,"test") ;
-      }
-    });
     Menu.item3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
 				dispose();
@@ -78,8 +65,10 @@ public class Window extends JFrame implements ActionListener{
    public void actionPerformed(ActionEvent arg0) {
      //args here later
      if(arg0.getSource() == buttons.get(0)){
-       System.out.println("push Brique ! ");
        Mousse.TYPE="B";
+     }
+     if(arg0.getSource()== buttons.get(1)){
+       Mousse.TYPE="N";
      }
    }
 }

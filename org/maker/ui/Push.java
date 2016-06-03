@@ -23,6 +23,11 @@ public class Push extends JButton {
 				Image ii1= i1.getImage();
 				g.drawImage(ii1,0,0,30,30,this);
       break ;
+      case "delete":
+        ImageIcon i11 = new ImageIcon(PATH+"backgrounds/erase.png");
+        Image ii11= i11.getImage();
+        g.drawImage(ii11,0,0,30,30,this);
+      break;
       default: System.out.println("no more push");
     }
   }

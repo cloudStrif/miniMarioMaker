@@ -4,11 +4,11 @@ public class Grid{
     public String [][] field;
     public String [][] camera;
     public boolean [][] clignote ;
-    int s ;
-    int s2 ;
+    static int s ;
+    static int s2 ;
 
-    int posXinit =0 ;
-    int posYinit =0 ;
+    public int posXinit =0 ;
+    public int posYinit =0 ;
 
     public Grid (int s , int s2){
       this.s=s;
@@ -22,10 +22,13 @@ public class Grid{
     }
 
     public void refresh(){
+      System.out.println("========="+posYinit +" "+posXinit);
       for(int i=posYinit;i<posYinit+18;i++){
         for(int j=posXinit;j<posXinit+24;j++){
           camera[i][j]=field[i][j];
+          System.out.print(camera[i][j]);
         }
+        System.out.println() ;
       }
     }
 

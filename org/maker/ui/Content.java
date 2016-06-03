@@ -13,8 +13,14 @@ public class Content extends JPanel{
   Grid grid ;
   int x = 0 ;
   int y = 0 ;
+
+  public Content(){
+
+  }
+
   public Content(Grid grid){
     this.grid=grid;
+    new Mousse(this) ;
   }
   /*
   Default printing of the grid

@@ -22,7 +22,7 @@ public class Window extends JFrame implements ActionListener{
   Content p ;
   Menu menu =new Menu() ;
   Push p1 = new Push("brique");
-
+  Grid g;
 
   public Window(){
     setTitle("Mini Mario Maker");
@@ -30,7 +30,7 @@ public class Window extends JFrame implements ActionListener{
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     setLocationRelativeTo(null);
   //  setResizable(false);
-    Grid g =new Grid(100,100);
+    g = new Grid(100,100);
     p =  new Content(g);
 
     container.setBackground(Color.white);
@@ -68,6 +68,7 @@ public class Window extends JFrame implements ActionListener{
      //args here later
      if(arg0.getSource() == p1){
        System.out.println("pn");
+
      }
    }
 }

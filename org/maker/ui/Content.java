@@ -55,6 +55,11 @@ public class Content extends JPanel{
             Image w = imageIcon.getImage();
             g.drawImage(w, x, y, (int)(1000/24),(int)(600/18),this);
             break ;
+            case "M":
+            ImageIcon imageIco = new ImageIcon(Push.PATH+"tiles/p.png");
+            Image w1 = imageIco.getImage();
+            g.drawImage(w1, x, y, (int)(1000/24),(int)(600/18),this);
+            break ;
           }
           if (grid.clignote[i][j]==true) {
             g.setColor(new Color(11,23,111));

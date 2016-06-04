@@ -23,13 +23,22 @@ public class Grid{
 
     public void refresh(){
       System.out.println("========="+posYinit +" "+posXinit);
+      int ii =0;int jj=0;
       for(int i=posYinit;i<posYinit+18;i++){
         for(int j=posXinit;j<posXinit+24;j++){
-          camera[i][j]=field[i][j];
-          System.out.print(camera[i][j]);
+          camera[ii][jj]=field[i][j];
+          System.out.print(camera[ii][jj]);
+          if(jj<24-1)
+            jj++;
+
         }
+        if(ii<18-1)
+          ii++;
+        jj=0;
         System.out.println() ;
       }
+      ii = jj = 0 ;
+      //debug(camera);
     }
 
     public void init (int v ,int y,String[][] str){
@@ -37,6 +46,15 @@ public class Grid{
         for(int j=posXinit;j<y;j++){
           str[i][j]="N";
         }
+      }
+    }
+
+    public void debug(String[][] tab){
+      for(int i=0 ; i<tab.length;i++){
+        for(int j=0;j<tab[0].length;j++){
+          System.out.print(tab[i][j]);
+        }
+        System.out.println();
       }
     }
 

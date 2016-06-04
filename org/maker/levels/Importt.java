@@ -40,6 +40,7 @@ public class Importt {
         }
         System.out.println();
       }
+      g.posXinit++;
       g.refresh() ;
     } catch (Exception ex) {
       ex.printStackTrace();

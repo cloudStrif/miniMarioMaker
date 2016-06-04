@@ -28,6 +28,16 @@ public class Push extends JButton {
         Image ii11= i11.getImage();
         g.drawImage(ii11,0,0,30,30,this);
       break;
+      case "avance":
+        ImageIcon image1 = new ImageIcon(PATH+"backgrounds/f2.png");
+        Image image2= image1.getImage();
+        g.drawImage(image2,-20,-20,70,70,this);
+      break;
+      case "recule":
+        ImageIcon images1 = new ImageIcon(PATH+"backgrounds/f1.png");
+        Image images2= images1.getImage();
+        g.drawImage(images2,-20,-20,70,70,this);
+      break;
       default: System.out.println("no more push");
     }
   }

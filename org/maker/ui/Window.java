@@ -23,7 +23,7 @@ public class Window extends JFrame implements ActionListener{
   JPanel container = new JPanel() ;
   Content p ;
   Menu menu ;
-  String [] tabName ={"brique","delete"} ;
+  String [] tabName ={"brique","delete","recule","avance"} ;
   ArrayList<Push> buttons = new ArrayList<Push>() ;
   Push p1 = new Push("brique");
   static Grid g;
@@ -71,6 +71,16 @@ public class Window extends JFrame implements ActionListener{
      }
      if(arg0.getSource()== buttons.get(1)){
        Mousse.TYPE="N";
+     }
+     if(arg0.getSource()== buttons.get(2)){
+       g.posXinit -- ;
+       g.refresh() ;
+       p.repaint() ;
+     }
+     if(arg0.getSource()== buttons.get(3)){
+       g.posXinit ++ ;
+       g.refresh() ;
+       p.repaint() ;
      }
    }
 }

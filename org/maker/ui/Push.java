@@ -24,9 +24,9 @@ public class Push extends JButton {
 				g.drawImage(ii1,0,0,30,30,this);
       break ;
       case "delete":
-        ImageIcon i11 = new ImageIcon(PATH+"backgrounds/erase.png");
-        Image ii11= i11.getImage();
-        g.drawImage(ii11,0,0,30,30,this);
+        ImageIcon im11 = new ImageIcon(PATH+"backgrounds/erase.png");
+        Image iim11= im11.getImage();
+        g.drawImage(iim11,0,0,30,30,this);
       break;
       case "avance":
         ImageIcon image1 = new ImageIcon(PATH+"backgrounds/f2.png");
@@ -37,6 +37,16 @@ public class Push extends JButton {
         ImageIcon images1 = new ImageIcon(PATH+"backgrounds/f1.png");
         Image images2= images1.getImage();
         g.drawImage(images2,-20,-20,70,70,this);
+      break;
+      case "bas":
+        ImageIcon imags1 = new ImageIcon(PATH+"backgrounds/f3.png");
+        Image imags2= imags1.getImage();
+        g.drawImage(imags2,-20,-20,70,70,this);
+      break;
+      case "haut":
+        ImageIcon imagess1 = new ImageIcon(PATH+"backgrounds/f4.png");
+        Image imagess2= imagess1.getImage();
+        g.drawImage(imagess2,-20,-20,70,70,this);
       break;
       default: System.out.println("no more push");
     }

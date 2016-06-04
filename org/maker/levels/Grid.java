@@ -4,8 +4,8 @@ public class Grid{
     public String [][] field;
     public String [][] camera;
     public boolean [][] clignote ;
-    static int s ;
-    static int s2 ;
+    public static int s ;
+    public static int s2 ;
 
     public int posXinit =0 ;
     public int posYinit =0 ;

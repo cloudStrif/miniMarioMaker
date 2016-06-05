@@ -117,8 +117,8 @@ public class Window extends JFrame implements ActionListener{
          Mousse.TYPE="P";
       }
       if(arg0.getSource()== buttons.get(9)){
+        Mousse.TYPE=Piece.TYPE;
         if(!pice.active){
-          Mousse.TYPE=Piece.TYPE;
           pice.start();
         }
       }

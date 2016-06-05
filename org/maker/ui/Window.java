@@ -16,6 +16,7 @@ import org.maker.ui.Menu ;
 import org.maker.levels.Importt ;
 import org.maker.levels.Grid ;
 import org.maker.ui.Mousse ;
+import org.maker.ressources.Piece ;
 
 public class Window extends JFrame implements ActionListener{
   final static int tX =1000;
@@ -23,12 +24,15 @@ public class Window extends JFrame implements ActionListener{
   JPanel container = new JPanel() ;
   Content p ;
   Menu menu ;
-  String [] tabName ={"brique","delete","recule","avance","bas","haut","brique2","herbe"} ;
+  String [] tabName ={"brique","delete","recule","avance","bas","haut","brique2","herbe"
+,"bloc","piece"} ;
   ArrayList<Push> buttons = new ArrayList<Push>() ;
   Push p1 = new Push("brique");
   static Grid g;
+  Piece pice;
 
   public Window(){
+
     setTitle("Mini Mario Maker");
     setSize(tX,tY);
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -62,6 +66,7 @@ public class Window extends JFrame implements ActionListener{
     setJMenuBar(menu);
     setContentPane(container);
     setVisible(true);
+    pice = new Piece(1,p);
   }
 
    public void actionPerformed(ActionEvent arg0) {
@@ -107,6 +112,15 @@ public class Window extends JFrame implements ActionListener{
       }
       if(arg0.getSource()== buttons.get(7)){
          Mousse.TYPE="H";
+      }
+      if(arg0.getSource()== buttons.get(8)){
+         Mousse.TYPE="P";
+      }
+      if(arg0.getSource()== buttons.get(9)){
+        if(!pice.active){
+          Mousse.TYPE=Piece.TYPE;
+          pice.start();
+        }
       }
    }
 }

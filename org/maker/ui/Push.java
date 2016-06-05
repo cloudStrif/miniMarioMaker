@@ -28,6 +28,16 @@ public class Push extends JButton {
         Image iimm1= imm1.getImage();
         g.drawImage(iimm1,0,0,30,30,this);
       break ;
+      case "bloc" :
+        ImageIcon ic = new ImageIcon(PATH+"items/Question_Block_Dead.png");
+        Image ic2= ic.getImage();
+        g.drawImage(ic2,0,0,30,30,this);
+      break ;
+      case "piece" :
+        ImageIcon ico = new ImageIcon(PATH+"items/Coin_1.png");
+        Image ico2= ico.getImage();
+        g.drawImage(ico2,0,0,30,30,this);
+      break ;
       case "herbe" :
         ImageIcon mm1 = new ImageIcon(PATH+"tiles/r.png");
         Image mmm1= mm1.getImage();

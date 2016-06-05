@@ -3,6 +3,7 @@ package org.maker.ui ;
 import org.maker.levels.Grid ;
 import org.maker.ui.Window ;
 import org.maker.ui.Push ;
+import org.maker.ressources.Piece ;
 
 import javax.swing.JPanel;
 import java.awt.Graphics;
@@ -51,19 +52,29 @@ public class Content extends JPanel{
 
           switch(grid.camera[i][j]){
             case "B":
-            ImageIcon imageIcon = new ImageIcon(Push.PATH+"tiles/r3.png");
-            Image w = imageIcon.getImage();
-            g.drawImage(w, x, y, (int)(1000/24),(int)(600/18),this);
+              ImageIcon imageIcon = new ImageIcon(Push.PATH+"tiles/r3.png");
+              Image w = imageIcon.getImage();
+              g.drawImage(w, x, y, (int)(1000/24),(int)(600/18),this);
             break ;
             case "M":
-            ImageIcon imageIco = new ImageIcon(Push.PATH+"tiles/p.png");
-            Image w1 = imageIco.getImage();
-            g.drawImage(w1, x, y, (int)(1000/24),(int)(600/18),this);
+              ImageIcon imageIco = new ImageIcon(Push.PATH+"tiles/p.png");
+              Image w1 = imageIco.getImage();
+              g.drawImage(w1, x, y, (int)(1000/24),(int)(600/18),this);
             break ;
             case "H":
-            ImageIcon imageIc = new ImageIcon(Push.PATH+"tiles/r.png");
-            Image w33 = imageIc.getImage();
-            g.drawImage(w33, x, y, (int)(1000/24),(int)(600/18),this);
+              ImageIcon imageIc = new ImageIcon(Push.PATH+"tiles/r.png");
+              Image w33 = imageIc.getImage();
+              g.drawImage(w33, x, y, (int)(1000/24),(int)(600/18),this);
+            break ;
+            case "p":
+              ImageIcon imIc = new ImageIcon(Push.PATH+"items/"+Piece.name);
+              Image w333 = imIc.getImage();
+              g.drawImage(w333, x+5, y+5, (int)(1000/24)-5,(int)(600/18)-5,this);
+            break ;
+            case "P":
+              ImageIcon ic = new ImageIcon(Push.PATH+"items/Question_Block_Dead.png");
+              Image ic2 = ic.getImage();
+              g.drawImage(ic2, x, y, (int)(1000/24),(int)(600/18),this);
             break ;
           }
           if (grid.clignote[i][j]==true) {

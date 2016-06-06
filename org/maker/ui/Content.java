@@ -35,6 +35,7 @@ public class Content extends JPanel{
   Default printing of the grid
    */
   public void paintComponent(Graphics g){
+     super.paintComponent(g);
     printing(g);
   }
 
@@ -81,8 +82,6 @@ public class Content extends JPanel{
             g.setColor(new Color(11,23,111));
             g.fillRect(x,y,(int)(1000/24)-1,(int)(600/18)-1);
           }
-
-
           x+=(int)(1000/24);
         }
         x=0;

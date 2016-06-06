@@ -17,6 +17,7 @@ import org.maker.levels.Importt ;
 import org.maker.levels.Grid ;
 import org.maker.ui.Mousse ;
 import org.maker.ressources.Piece ;
+import org.maker.character.Goumba;
 
 public class Window extends JFrame implements ActionListener{
   final static int tX =1000;
@@ -25,7 +26,7 @@ public class Window extends JFrame implements ActionListener{
   Content p ;
   Menu menu ;
   String [] tabName ={"brique","delete","recule","avance","bas","haut","brique2","herbe"
-,"bloc","piece"} ;
+,"bloc","piece","goumba"} ;
   ArrayList<Push> buttons = new ArrayList<Push>() ;
   Push p1 = new Push("brique");
   static Grid g;
@@ -121,6 +122,9 @@ public class Window extends JFrame implements ActionListener{
         if(!pice.active){
           pice.start();
         }
+      }
+      if(arg0.getSource()== buttons.get(10)){
+         Mousse.TYPE=Goumba.TYPE+"";
       }
    }
 }

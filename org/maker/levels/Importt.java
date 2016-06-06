@@ -14,6 +14,7 @@ import java.io.InputStreamReader;
 
 import org.maker.levels.Grid ;
 import org.maker.ui.Content ;
+import org.maker.ressources.Piece ;
 
 public class Importt {
   public Importt(){
@@ -34,6 +35,7 @@ public class Importt {
         for(int j=0; j<Grid.s2+1;j++){
           if(recup.charAt(inc) != '\n'){
             g.field[i][j]=recup.charAt(inc)+"";
+
             System.out.print(g.field[i][j]);
           }
           inc++;

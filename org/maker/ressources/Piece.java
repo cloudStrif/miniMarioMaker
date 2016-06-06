@@ -1,17 +1,18 @@
 package org.maker.ressources ;
 import org.maker.ui.Content ;
-
-import java.util.concurrent.TimeUnit;
-import javax.swing.Timer;
+import org.maker.ressources.TimePiece ;
 
 
-public class Piece extends Thread{
+import java.util.*;
+
+public class Piece {//extends Thread{
   public final static String TYPE ="p";
   public static String name ;
   Content content ;
   int value ;
   int count=1 ;
   public boolean active =false;
+  Timer timer ;
 
 
   public Piece(int value,Content content){
@@ -22,17 +23,19 @@ public class Piece extends Thread{
   }
 
 
-  public void run(){
+  public void rune(){
     this.active=true;
-    String c="Coin_";
+    timer = new Timer() ;
+    TimePiece tp = new TimePiece(this);
+    timer.scheduleAtFixedRate( tp, 150,100);
+  /*  String c="Coin_";
     while(this.active){
       for(int inc=1;inc<=8;inc++){
         this.name =c+inc+".png";
         this.content.repaint();
         pause(100);
-
       }
-    }
+    }*/
   }
 
  //First version of pause with a Thread

@@ -120,7 +120,7 @@ public class Window extends JFrame implements ActionListener{
       if(arg0.getSource()== buttons.get(9)){
         Mousse.TYPE=Piece.TYPE;
         if(!pice.active){
-          pice.start();
+          pice.rune();
         }
       }
       if(arg0.getSource()== buttons.get(10)){

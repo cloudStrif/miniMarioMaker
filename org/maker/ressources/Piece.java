@@ -19,15 +19,16 @@ public class Piece {//extends Thread{
     this.value=value;
     name="Coin_"+this.count+".png";
     this.content=content ;
-
   }
+
+  public Piece(){}
 
 
   public void rune(){
     this.active=true;
     timer = new Timer() ;
     TimePiece tp = new TimePiece(this);
-    timer.scheduleAtFixedRate( tp, 150,100);
+    timer.scheduleAtFixedRate( tp, 100,100);
   /*  String c="Coin_";
     while(this.active){
       for(int inc=1;inc<=8;inc++){

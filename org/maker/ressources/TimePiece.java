@@ -1,6 +1,6 @@
 package org.maker.ressources;
 import java.util.*;
-
+import java.awt.Toolkit ;
 
 /*
 *old class useless now
@@ -23,6 +23,7 @@ class TimePiece extends TimerTask{
       count++;
       if(count >=8)
         count =1 ;
+    Toolkit.getDefaultToolkit().sync();
       pic.content.repaint() ;
   }
 }

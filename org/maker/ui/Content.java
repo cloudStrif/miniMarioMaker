@@ -4,6 +4,8 @@ import org.maker.levels.Grid ;
 import org.maker.ui.Window ;
 import org.maker.ui.Push ;
 import org.maker.ressources.Piece ;
+import org.maker.character.Goumba ;
+
 
 import javax.swing.JPanel;
 import java.awt.Graphics;
@@ -30,13 +32,14 @@ public class Content extends JPanel{
     clignote[0]=0 ;
     clignote[1]=0 ;
     new Mousse(this) ;
+    setDoubleBuffered(false);
   }
   /*
   Default printing of the grid
    */
   public void paintComponent(Graphics g){
      super.paintComponent(g);
-    printing(g);
+     printing(g);
   }
 
   public void printing(Graphics g){
@@ -71,6 +74,11 @@ public class Content extends JPanel{
               ImageIcon imIc = new ImageIcon(Push.PATH+"items/"+Piece.name);
               Image w333 = imIc.getImage();
               g.drawImage(w333, x+5, y+5, (int)(1000/24)-5,(int)(600/18)-5,this);
+            break ;
+            case "9":
+              ImageIcon imIco = new ImageIcon(Push.PATH+"baddies/"+Goumba.face);
+              Image w23 = imIco.getImage();
+              g.drawImage(w23, x+5, y+5, (int)(1000/24)-5,(int)(600/18)-5,this);
             break ;
             case "P":
               ImageIcon ic = new ImageIcon(Push.PATH+"items/Question_Block_Dead.png");

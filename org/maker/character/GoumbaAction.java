@@ -21,12 +21,13 @@ public class GoumbaAction extends TimerTask{
 
   public void gravity(){
     while((this.gou.content.grid.field[direction2+1][direction]).equals("N")){
+      this.gou.content.grid.field[direction2][direction]="N";
       direction2++ ;
+      this.gou.content.grid.field[direction2][direction]=gou.TYPE+"";
       this.gou.content.repaint() ;
       Toolkit.getDefaultToolkit().sync();
       this.gou.content.grid.refresh() ;
       new Piece().pause(400) ;
-
     }
   }
 
@@ -38,33 +39,53 @@ public class GoumbaAction extends TimerTask{
     }else{
       this.gou.face ="Goomba_Normal_2.png";
     }
+    if(this.direct == 0){
+    if((this.gou.content.grid.field[direction2][direction-1]).equals("N")){
 
-    if((this.gou.content.grid.field[direction2][direction-1]).equals("N") && this.direct ==0){
-      direction -- ;
-      if((this.gou.content.grid.field[direction2+1][direction-1]).equals("N")){
-        gravity() ;//try to simulate the gravity force
-      }
+      if((this.gou.content.grid.field[direction2+1][direction]).equals("N")){
+      //  gravity() ;//try to simulate the gravity force
+        this.direct = 2 ;
+      }else {
+       direction -- ;
       this.gou.content.grid.field[direction2][direction]=gou.TYPE+"";
       this.gou.content.repaint() ;
       Toolkit.getDefaultToolkit().sync();
+    }
     }else{
       this.direct =1 ;
     }
+  }
+  if(this.direct == 1){
+    if((this.gou.content.grid.field[direction2][direction+1]).equals("N") ){
 
-    if((this.gou.content.grid.field[direction2][direction+1]).equals("N") && this.direct ==1){
-      direction ++ ;
-      if((this.gou.content.grid.field[direction2+1][direction+1]).equals("N")){
-        gravity() ;//try to simulate the gravity force
-      }
+      if((this.gou.content.grid.field[direction2+1][direction]).equals("N")){
+        //gravity() ;//try to simulate the gravity force
+        this.direct=2;
+      }else{   direction ++ ;
       this.gou.content.grid.field[direction2][direction]=gou.TYPE+"";
       this.gou.content.repaint() ;
       Toolkit.getDefaultToolkit().sync();
+    }
     }else{
       this.direct =0 ;
       this.gou.content.grid.field[direction2][direction]=gou.TYPE+"";
       this.gou.content.repaint() ;
       Toolkit.getDefaultToolkit().sync();
     }
+  }
+  if(this.direct == 2){
+    if((this.gou.content.grid.field[direction2+1][direction]).equals("N")){
+      direction2++ ;
+      this.gou.content.grid.field[direction2][direction]=gou.TYPE+"";
+      this.gou.content.repaint() ;
+      Toolkit.getDefaultToolkit().sync();
+    }else{
+      this.direct = 0 ;
+      this.gou.content.grid.field[direction2][direction]=gou.TYPE+"";
+      this.gou.content.repaint() ;
+      Toolkit.getDefaultToolkit().sync();
+    }
+  }
 
     if(direction < 1){
       this.gou.content.grid.field[direction2][direction]=gou.TYPE+"";

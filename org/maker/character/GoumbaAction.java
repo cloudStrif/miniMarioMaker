@@ -18,23 +18,24 @@ public class GoumbaAction extends TimerTask{
   }
 
   public void run(){
-    this.gou.content.grid.camera[gou.pos[1]][direction]="N";
+      this.gou.content.grid.refresh() ;
+    this.gou.content.grid.field[gou.pos[1]][direction]="N";
     if(direction % 2 == 0){
       this.gou.face ="Goomba_Normal_1.png";
     }else{
       this.gou.face ="Goomba_Normal_2.png";
     }
-    if((this.gou.content.grid.camera[gou.pos[1]][direction-1]).equals("N") && this.direct ==0){
+    if((this.gou.content.grid.field[gou.pos[1]][direction-1]).equals("N") && this.direct ==0){
       direction -- ;
-      this.gou.content.grid.camera[gou.pos[1]][direction]=gou.TYPE+"";
+      this.gou.content.grid.field[gou.pos[1]][direction]=gou.TYPE+"";
       this.gou.content.repaint() ;
       Toolkit.getDefaultToolkit().sync();
     }else{
       this.direct =1 ;
     }
-    if((this.gou.content.grid.camera[gou.pos[1]][direction+1]).equals("N") && this.direct ==1){
+    if((this.gou.content.grid.field[gou.pos[1]][direction+1]).equals("N") && this.direct ==1){
       direction ++ ;
-      this.gou.content.grid.camera[gou.pos[1]][direction]=gou.TYPE+"";
+      this.gou.content.grid.field[gou.pos[1]][direction]=gou.TYPE+"";
       this.gou.content.repaint() ;
       Toolkit.getDefaultToolkit().sync();
     }else{
@@ -42,7 +43,7 @@ public class GoumbaAction extends TimerTask{
     }
 
     if(direction < 1){
-      this.gou.content.grid.camera[gou.pos[1]][direction]=gou.TYPE+"";
+      this.gou.content.grid.field[gou.pos[1]][direction]=gou.TYPE+"";
       this.cancel() ;
     }
 

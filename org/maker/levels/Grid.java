@@ -20,7 +20,9 @@ public class Grid{
       init(s,s2,field);
 
     }
-
+    /*
+    *refresh the camera from the field 
+    */
     public void refresh(){
       System.out.println("========="+posYinit +" "+posXinit);
       int ii =0;int jj=0;

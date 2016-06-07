@@ -27,6 +27,6 @@ public class Goumba{
   public void rune(){
     timer = new Timer() ;
     GoumbaAction tp = new GoumbaAction(this);
-    timer.scheduleAtFixedRate( tp, 350,350);
+    timer.scheduleAtFixedRate( tp, 200,200);
   }
 }

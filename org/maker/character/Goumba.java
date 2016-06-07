@@ -2,7 +2,7 @@ package org.maker.character ;
 import org.maker.ressources.Piece ;
 import org.maker.character.GoumbaAction ;
 import org.maker.levels.Grid ;
-import org.maker.ui.Content ; 
+import org.maker.ui.Content ;
 
 import java.util.*;
 
@@ -13,13 +13,15 @@ public class Goumba{
   //current position of the goumba
   int [] pos = new int[2];
   Timer timer ;
+  //Current Grid with the goumba under
+  Content content ;
   Grid grid ;
 
-
-  public Goumba(int x ,int y,Grid grid){
+  public Goumba(int x ,int y,Content content){
     pos[0]=x;
     pos[1]=y;
-    this.grid=grid ;
+    this.grid=content.grid ;
+    this.content=content ;
   }
 
   public void rune(){

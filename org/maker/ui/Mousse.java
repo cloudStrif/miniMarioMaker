@@ -16,9 +16,14 @@ public class Mousse{
 
         content.addMouseListener(new MouseAdapter(){
             public void mousePressed(MouseEvent e){
+              //Try to check a goumba ...
               if(TYPE.equals(Goumba.TYPE+"")){
                 System.out.println("Goumba move !");
+                Goumba gou = new Goumba((int)(content.grid.posXinit+(e.getX()/(1000/24))) , (int)(content.grid.posYinit+(e.getY()/(600/18))) ,content)
+                ;
+                gou.rune();
               }
+
               try{
                 content.grid.camera[(int)(e.getY()/(600/18))][(int)(e.getX()/(1000/24))]=TYPE ;
                 content.grid.field[(int)(content.grid.posYinit+(e.getY()/(600/18)))][(int)(content.grid.posXinit+(e.getX()/(1000/24)))]=TYPE ;

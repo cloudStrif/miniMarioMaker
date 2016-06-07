@@ -18,6 +18,7 @@ import org.maker.levels.Grid ;
 import org.maker.ui.Mousse ;
 import org.maker.ressources.Piece ;
 import org.maker.character.Goumba;
+//import org.maker.sound.Soundd ;
 
 public class Window extends JFrame implements ActionListener{
   final static int tX =1000;
@@ -68,6 +69,7 @@ public class Window extends JFrame implements ActionListener{
     setContentPane(container);
     setVisible(true);
     pice = new Piece(1,p);
+    //new Soundd("theme.wav",true).start();
   }
 
    public void actionPerformed(ActionEvent arg0) {
@@ -124,6 +126,7 @@ public class Window extends JFrame implements ActionListener{
         }
       }
       if(arg0.getSource()== buttons.get(10)){
+
          Mousse.TYPE=Goumba.TYPE+"";
       }
    }

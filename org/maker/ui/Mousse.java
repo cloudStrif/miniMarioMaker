@@ -3,6 +3,7 @@ package org.maker.ui ;
 
 import org.maker.ui.Content ;
 import org.maker.levels.Grid ;
+import org.maker.character.Goumba ;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -15,7 +16,10 @@ public class Mousse{
 
         content.addMouseListener(new MouseAdapter(){
             public void mousePressed(MouseEvent e){
-                try{
+              if(TYPE.equals(Goumba.TYPE+"")){
+                System.out.println("Goumba move !");
+              }
+              try{
                 content.grid.camera[(int)(e.getY()/(600/18))][(int)(e.getX()/(1000/24))]=TYPE ;
                 content.grid.field[(int)(content.grid.posYinit+(e.getY()/(600/18)))][(int)(content.grid.posXinit+(e.getX()/(1000/24)))]=TYPE ;
                 content.repaint();
@@ -49,5 +53,6 @@ public class Mousse{
             }
           });
   }
+
 
 }

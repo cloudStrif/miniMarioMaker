@@ -24,6 +24,6 @@ class TimePiece extends TimerTask{
       if(count >=8)
         count =1 ;
     Toolkit.getDefaultToolkit().sync();
-      pic.content.repaint() ;
+    pic.content.repaint() ;
   }
 }

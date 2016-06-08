@@ -34,6 +34,7 @@ public class Window extends JFrame implements ActionListener{
   Push p1 = new Push("brique");
   static Grid g;
   Piece pice;
+  Boxe box ;
 
   public Window(){
 
@@ -71,6 +72,7 @@ public class Window extends JFrame implements ActionListener{
     setContentPane(container);
     setVisible(true);
     pice = new Piece(1,p);
+    box  = new Boxe(1,p);
     //new Soundd("theme.wav",true).start();
   }
 
@@ -129,12 +131,14 @@ public class Window extends JFrame implements ActionListener{
       }
       if(arg0.getSource()== buttons.get(10)){
          Mousse.TYPE=Goumba.TYPE+"";
-         
+
       }
       if(arg0.getSource()== buttons.get(11)){
         //This is a box
          Mousse.TYPE=Boxe.TYPE;
-
+         if(!box.active){
+            box.start() ;
+         }
       }
    }
 }

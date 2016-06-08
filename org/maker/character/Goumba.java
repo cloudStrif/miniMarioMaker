@@ -30,4 +30,9 @@ public class Goumba{
     GoumbaAction tp = new GoumbaAction(this);
     timer.scheduleAtFixedRate( tp, 200,200);
   }
+
+  public void stopAction(){
+    
+    timer.cancel() ;
+  }
 }

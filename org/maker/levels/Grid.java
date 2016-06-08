@@ -21,7 +21,7 @@ public class Grid{
 
     }
     /*
-    *refresh the camera from the field 
+    *refresh the camera from the field
     */
     public void refresh(){
       System.out.println("========="+posYinit +" "+posXinit);
@@ -58,6 +58,15 @@ public class Grid{
         }
         System.out.println();
       }
+    }
+    public void clearAll(){
+      for (int i=0 ; i< s ; i++){
+        for (int j=0 ; j<s2;j++){
+          this.field[i][j] = "N" ;
+        }
+      }
+      refresh() ; 
+
     }
 
 }

@@ -37,7 +37,7 @@ public class Mousse{
 
        content.addMouseMotionListener(new MouseMotionListener(){
             public void mouseDragged(MouseEvent e) {
-              try{
+            try{
               content.grid.camera[(int)(e.getY()/(600/18))][(int)(e.getX()/(1000/24))]=TYPE ;
               content.grid.field[(int)(content.grid.posYinit+(e.getY()/(600/18)))][(int)(content.grid.posXinit+(e.getX()/(1000/24)))]=TYPE ;
               content.repaint();

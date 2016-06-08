@@ -25,14 +25,14 @@ public class Content extends JPanel{
   int y = 0 ;
 
   int [] clignote = new int[2];
-
+  Mousse mousse ;
   public Content(){}
 
   public Content(Grid grid){
     this.grid=grid;
     clignote[0]=0 ;
     clignote[1]=0 ;
-    new Mousse(this) ;
+    mousse = new Mousse(this) ;
     setDoubleBuffered(false);
   }
   /*

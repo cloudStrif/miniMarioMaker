@@ -17,12 +17,16 @@ public class Menu extends JMenuBar{
   static JMenuItem item1 = new JMenuItem("import");
   static JMenuItem item2 = new JMenuItem("export");
   static JMenuItem item4 = new JMenuItem("Vue globale");
+  static JMenuItem item5 = new JMenuItem("clear all");
   static JMenuItem item3 = new JMenuItem("Quit the programm");
+
   public Menu(Content p){
     super() ;
     menu1.add(item1);
     menu1.add(item2);
+    menu1.add(item5);
     menu1.add(item3);
+
     this.add(menu1);
     item1.addActionListener(new ActionListener() {
         public void actionPerformed(ActionEvent event) {
@@ -40,6 +44,14 @@ public class Menu extends JMenuBar{
     item4.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent event) {
         //Later ...
+      }
+    });
+    item5.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent event) {
+          p.mousse.gou.stopAction() ;
+        p.grid.clearAll() ;
+        p.repaint() ;
+
       }
     });
 

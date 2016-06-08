@@ -16,6 +16,7 @@ public class Goumba{
   //Current Grid with the goumba under
   Content content ;
   Grid grid ;
+  int state = 0 ;
 
   public Goumba(int x ,int y,Content content){
     pos[0]=x;

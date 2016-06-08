@@ -5,6 +5,7 @@ import org.maker.ui.Window ;
 import org.maker.ui.Push ;
 import org.maker.ressources.Piece ;
 import org.maker.character.Goumba ;
+import org.maker.ressources.Boxe ;
 
 
 import javax.swing.JPanel;
@@ -84,6 +85,11 @@ public class Content extends JPanel{
               ImageIcon ic = new ImageIcon(Push.PATH+"items/Question_Block_Dead.png");
               Image ic2 = ic.getImage();
               g.drawImage(ic2, x, y, (int)(1000/24),(int)(600/18),this);
+            break ;
+            case "Q":
+              ImageIcon boxo = new ImageIcon(Push.PATH+"items/"+Boxe.name);
+              Image boxo2 = boxo.getImage();
+              g.drawImage(boxo2, x, y, (int)(1000/24),(int)(600/18),this);
             break ;
           }
           if (grid.clignote[i][j]==true) {

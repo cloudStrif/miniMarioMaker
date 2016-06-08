@@ -12,6 +12,7 @@ import java.awt.event.MouseMotionListener;
 
 public class Mousse{
   static String TYPE= " " ;
+  Goumba gou ;
   public Mousse(Content content){
 
         content.addMouseListener(new MouseAdapter(){
@@ -19,7 +20,7 @@ public class Mousse{
               //Try to check a goumba ...
               if(TYPE.equals(Goumba.TYPE+"")){
                 System.out.println("Goumba move !");
-                Goumba gou = new Goumba((int)(content.grid.posXinit+(e.getX()/(1000/24))) , (int)(content.grid.posYinit+(e.getY()/(600/18))) ,content)
+                gou = new Goumba((int)(content.grid.posXinit+(e.getX()/(1000/24))) , (int)(content.grid.posYinit+(e.getY()/(600/18))) ,content)
                 ;
                 gou.rune();
               }

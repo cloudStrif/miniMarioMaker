@@ -1,4 +1,7 @@
 package org.maker.character;
+
+//basic class for mario  
+
 public  class Character{
   int life ;
   int sens ;

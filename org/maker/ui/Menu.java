@@ -48,7 +48,9 @@ public class Menu extends JMenuBar{
     });
     item5.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent event) {
+        if(p.mousse.gou != null)
           p.mousse.gou.stopAction() ;
+
         p.grid.clearAll() ;
         p.repaint() ;
 

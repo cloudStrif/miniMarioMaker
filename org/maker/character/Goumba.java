@@ -17,6 +17,7 @@ public class Goumba{
   Content content ;
   Grid grid ;
   int state = 0 ;
+  boolean isrunning = false ;
 
   public Goumba(int x ,int y,Content content){
     pos[0]=x;
@@ -26,13 +27,14 @@ public class Goumba{
   }
 
   public void rune(){
+    this.isrunning=true; //is already running
     timer = new Timer() ;
     GoumbaAction tp = new GoumbaAction(this);
     timer.scheduleAtFixedRate( tp, 200,200);
   }
 
   public void stopAction(){
-    
-    timer.cancel() ;
+    if(isrunning)
+      timer.cancel() ;
   }
 }

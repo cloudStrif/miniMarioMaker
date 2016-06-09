@@ -131,7 +131,6 @@ public class Window extends JFrame implements ActionListener{
       }
       if(arg0.getSource()== buttons.get(10)){
          Mousse.TYPE=Goumba.TYPE+"";
-
       }
       if(arg0.getSource()== buttons.get(11)){
         //This is a box

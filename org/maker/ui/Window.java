@@ -1,5 +1,6 @@
 package org.maker.ui;
 
+import javax.swing.JTextField;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
@@ -11,6 +12,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import javax.swing.JButton;
 import java.util.ArrayList ;
+import java.awt.Dimension;
 
 import org.maker.ui.Menu ;
 import org.maker.levels.Importt ;
@@ -19,6 +21,8 @@ import org.maker.ui.Mousse ;
 import org.maker.ressources.Piece ;
 import org.maker.character.Goumba;
 import org.maker.ressources.Boxe ;
+//import org.maker.Playable.Controller.ControllerKey;
+
 
 //import org.maker.sound.Soundd ;
 
@@ -26,6 +30,7 @@ public class Window extends JFrame implements ActionListener{
   final static int tX =1000;
   final static int tY =650;
   JPanel container = new JPanel() ;
+  JTextField jtf;
   Content p ;
   Menu menu ;
   String [] tabName ={"brique","delete","recule","avance","bas","haut","brique2","herbe"
@@ -52,10 +57,16 @@ public class Window extends JFrame implements ActionListener{
     g = new Grid(100,100);
     p =  new Content(g);
     menu =new Menu(p) ;
+    JPanel south = new JPanel() ;
+  /*  jtf = new JTextField();
+    south.add(jtf);
+    jtf.setPreferredSize(new Dimension(100, 10));
+		jtf.addKeyListener(new ControllerKey());*/
 
     container.setBackground(Color.white);
 		container.setLayout(new BorderLayout());
     container.add(p, BorderLayout.CENTER);
+    //container.add(south,BorderLayout.SOUTH);
 
     JPanel north = new JPanel();
     for(int i=0;i<tabName.length;i++){

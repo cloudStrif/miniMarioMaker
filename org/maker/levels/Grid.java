@@ -20,6 +20,12 @@ public class Grid{
       init(s,s2,field);
 
     }
+    /**
+    Redimention of camera size
+    */
+    public void setPendule(int s ,int s2){
+      camera=new String[s][s2];
+    }
     /*
     *refresh the camera from the field
     */
@@ -65,7 +71,7 @@ public class Grid{
           this.field[i][j] = "N" ;
         }
       }
-      refresh() ; 
+      refresh() ;
 
     }
 

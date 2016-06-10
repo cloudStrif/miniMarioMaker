@@ -53,7 +53,6 @@ public class Menu extends JMenuBar{
 
         p.grid.clearAll() ;
         p.repaint() ;
-
       }
     });
 

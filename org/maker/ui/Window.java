@@ -13,6 +13,8 @@ import java.awt.Color;
 import javax.swing.JButton;
 import java.util.ArrayList ;
 import java.awt.Dimension;
+import javax.swing.JSplitPane;
+import javax.swing.JScrollPane;
 
 import org.maker.ui.Menu ;
 import org.maker.levels.Importt ;
@@ -21,13 +23,14 @@ import org.maker.ui.Mousse ;
 import org.maker.ressources.Piece ;
 import org.maker.character.Goumba;
 import org.maker.ressources.Boxe ;
-//import org.maker.Playable.Controller.ControllerKey;
+import org.maker.Playable.Controller.ControllerKey;
+import org.maker.Playable.Modele.Modele ;
 
 
 //import org.maker.sound.Soundd ;
 
 public class Window extends JFrame implements ActionListener{
-  final static int tX =1000;
+  final static int tX =1200;
   final static int tY =650;
   JPanel container = new JPanel() ;
   JTextField jtf;
@@ -58,33 +61,41 @@ public class Window extends JFrame implements ActionListener{
     p =  new Content(g);
     menu =new Menu(p) ;
     JPanel south = new JPanel() ;
-  /*  jtf = new JTextField();
+    jtf = new JTextField();
     south.add(jtf);
-    jtf.setPreferredSize(new Dimension(100, 10));
-		jtf.addKeyListener(new ControllerKey());*/
+    jtf.setPreferredSize(new Dimension(30, 30));
+		jtf.addKeyListener(new ControllerKey());
 
     container.setBackground(Color.white);
 		container.setLayout(new BorderLayout());
     container.add(p, BorderLayout.CENTER);
-    //container.add(south,BorderLayout.SOUTH);
 
+    //container.add(south,BorderLayout.SOUTH);
     JPanel north = new JPanel();
     for(int i=0;i<tabName.length;i++){
       buttons.get(i).addActionListener(this);
       north.add(buttons.get(i));
     }
+    north.add(jtf);
     container.add(north , BorderLayout.NORTH);
     Menu.item3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
 				dispose();
 			}
 		});
-    setJMenuBar(menu);
-    setContentPane(container);
-    setVisible(true);
+
+  //  setContentPane(container);
+
+    //  container.add(south,BorderLayout.SOUTH);
     pice = new Piece(1,p);
     box  = new Boxe(1,p);
-    //new Soundd("theme.wav",true).start();
+
+    JSplitPane split = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, new JScrollPane(new Modele()), new JScrollPane(container));
+    split.setDividerLocation(200);
+    getContentPane().add(split, BorderLayout.CENTER);
+    setJMenuBar(menu);
+  //  new Soundd("theme.wav",true).start();
+      setVisible(true);
   }
 
    public void actionPerformed(ActionEvent arg0) {

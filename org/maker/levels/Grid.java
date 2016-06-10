@@ -49,6 +49,24 @@ public class Grid{
       //debug(camera);
     }
 
+    public void refreshclone(int s , int t){
+      int ii =0;int jj=0;
+      for(int i=posYinit;i<posYinit+s;i++){
+        for(int j=posXinit;j<posXinit+t;j++){
+          camera[ii][jj]=field[i][j];
+          System.out.print(camera[ii][jj]);
+          if(jj<24-1)
+            jj++;
+
+        }
+        if(ii<18-1)
+          ii++;
+        jj=0;
+        System.out.println() ;
+      }
+      ii = jj = 0 ;
+    }
+
     public void init (int v ,int y,String[][] str){
       for(int i=posYinit;i<v;i++){
         for(int j=posXinit;j<y;j++){

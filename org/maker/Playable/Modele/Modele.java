@@ -12,7 +12,7 @@ public class Modele extends JPanel {
   Example JPanel test
   **/
   public void paintComponent(Graphics g){
-    g.setColor(Color.BLUE);
-    g.fillRect(0,0,200,200);
+    g.setColor(new Color(100,120,200));
+    g.fillRect(0,0,this.getWidth(),this.getHeight());
   }
 }

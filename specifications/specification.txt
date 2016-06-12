@@ -1,0 +1,12 @@
+=====MiniMarioMaker=======
+==========================
+
+How to use it :
+Linux :
+        -execute the bash file compile.sh
+
+
+The program has to be able to create some levels designs of classic Mario game
+and so , run them into a game thank's to the remote control.
+
+The programm needs to be pleasant to use. 

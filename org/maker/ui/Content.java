@@ -6,6 +6,7 @@ import org.maker.ui.Push ;
 import org.maker.ressources.Piece ;
 import org.maker.character.Goumba ;
 import org.maker.ressources.Boxe ;
+import org.maker.character.Mario;
 
 
 import javax.swing.JPanel;
@@ -19,6 +20,7 @@ import java.awt.Image;
 public class Content extends JPanel{
 
   public static Grid grid ;
+  Mario mario ;
 
 
   int x = 0 ;
@@ -28,8 +30,9 @@ public class Content extends JPanel{
   Mousse mousse ;
   public Content(){}
 
-  public Content(Grid grid){
+  public Content(Grid grid,Mario mario){
     this.grid=grid;
+    this.mario=mario ;
     clignote[0]=0 ;
     clignote[1]=0 ;
     mousse = new Mousse(this) ;

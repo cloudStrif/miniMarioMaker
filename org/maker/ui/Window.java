@@ -25,6 +25,7 @@ import org.maker.character.Goumba;
 import org.maker.ressources.Boxe ;
 import org.maker.Playable.Controller.ControllerKey;
 import org.maker.Playable.Modele.Modele ;
+import org.maker.character.Mario ;
 
 
 //import org.maker.sound.Soundd ;
@@ -43,6 +44,7 @@ public class Window extends JFrame implements ActionListener{
   static Grid g;
   Piece pice;
   Boxe box ;
+  Mario mario ; //main character on the piece
 
   public Window(){
 
@@ -58,7 +60,8 @@ public class Window extends JFrame implements ActionListener{
     setResizable(false);
     //Init Grid (use it each time)
     g = new Grid(100,100);
-    p =  new Content(g);
+    mario = new Mario(1,1);
+    p =  new Content(g,mario);
     menu =new Menu(p) ;
     JPanel south = new JPanel() ;
     jtf = new JTextField();
@@ -95,7 +98,7 @@ public class Window extends JFrame implements ActionListener{
     getContentPane().add(split, BorderLayout.CENTER);
     setJMenuBar(menu);
   //  new Soundd("theme.wav",true).start();
-      setVisible(true);
+    setVisible(true);
   }
 
    public void actionPerformed(ActionEvent arg0) {

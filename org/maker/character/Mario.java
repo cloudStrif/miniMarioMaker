@@ -1,6 +1,6 @@
 package org.maker.character ;
 
-public class Mario extends Character{
+public class Mario {
   public final static int 4 ;
   int posX ;
   int posY ;

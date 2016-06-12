@@ -6,6 +6,9 @@ import java.awt.event.KeyListener;
 import org.maker.ui.Window;
 import org.maker.ui.Content;
 
+/**
+Basic controller of Main character
+*/
 
 public class ControllerKey implements KeyListener {
   Window win ;
@@ -21,7 +24,7 @@ public class ControllerKey implements KeyListener {
   }
 
   public void keyPressed(KeyEvent arg0) {
-    System.out.println("mlmlmm");
+    System.out.println("Touch Keyboard");
   }
 
 

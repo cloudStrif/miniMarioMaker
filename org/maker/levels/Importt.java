@@ -17,8 +17,9 @@ import org.maker.ui.Content ;
 import org.maker.ressources.Piece ;
 
 public class Importt {
+
+
   public Importt(){
-  //  charger();
   }
 
   public static Grid charger(Grid g){

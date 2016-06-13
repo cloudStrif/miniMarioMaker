@@ -28,7 +28,7 @@ import org.maker.Playable.Modele.Modele ;
 import org.maker.character.Mario ;
 
 
-//import org.maker.sound.Soundd ;
+import org.maker.sound.Soundd ;
 
 public class Window extends JFrame implements ActionListener{
   final static int tX =1200;
@@ -97,7 +97,7 @@ public class Window extends JFrame implements ActionListener{
     split.setDividerLocation(200);
     getContentPane().add(split, BorderLayout.CENTER);
     setJMenuBar(menu);
-  //  new Soundd("theme.wav",true).start();
+    new Soundd().start();
     setVisible(true);
   }
 

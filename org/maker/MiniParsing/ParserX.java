@@ -14,6 +14,9 @@ public class ParserX {
   public  void tabSprite(){
     String doc=Importt.af(this.title);
     tab =doc.split("\n") ;
+    for(int o =0 ; o < tab.length ; o++){
+      System.out.println(tab[o]+"  " + o);
+    }
   }
 
   public void analyseXML(String name){

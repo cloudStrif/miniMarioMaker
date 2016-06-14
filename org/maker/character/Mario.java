@@ -10,11 +10,11 @@ public class Mario {
   int posX ;
   int posY ;
 
-  public Mario(int life , int sens){
+  public void mario(int life , int sens){
     // Later gestion  mario
   }
 
-  public void mario(int x , int y){
+  public  Mario(int x , int y){
       posX=x;
       posY=y;
       ParserX parse = new ParserX("org/maker/MiniParsing/mario.data");

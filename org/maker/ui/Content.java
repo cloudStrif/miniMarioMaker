@@ -37,6 +37,8 @@ public class Content extends JPanel{
     clignote[1]=0 ;
     mousse = new Mousse(this) ;
     setDoubleBuffered(false);
+    this.grid.field[5][5]= "4" ;
+    this.grid.refresh() ;
   }
   /*
   Default printing of the grid
@@ -94,6 +96,12 @@ public class Content extends JPanel{
               Image boxo2 = boxo.getImage();
               g.drawImage(boxo2, x, y, (int)(1000/24),(int)(600/18),this);
             break ;
+            case "4":
+              ImageIcon mariosprite = new ImageIcon(Push.PATH+"mario/"+mario.actual+".png");
+              Image msprite = mariosprite.getImage();
+              g.drawImage(msprite, x, y, (int)(1000/24),(int)(600/18),this);
+            break ;
+
           }
           if (grid.clignote[i][j]==true) {
             g.setColor(new Color(11,23,111));

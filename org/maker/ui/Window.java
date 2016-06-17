@@ -64,10 +64,7 @@ public class Window extends JFrame implements ActionListener{
     p =  new Content(g,mario);
     menu =new Menu(p) ;
     JPanel south = new JPanel() ;
-    jtf = new JTextField();
-    south.add(jtf);
-    jtf.setPreferredSize(new Dimension(30, 30));
-		jtf.addKeyListener(new ControllerKey());
+
 
     container.setBackground(Color.white);
 		container.setLayout(new BorderLayout());
@@ -79,7 +76,7 @@ public class Window extends JFrame implements ActionListener{
       buttons.get(i).addActionListener(this);
       north.add(buttons.get(i));
     }
-    north.add(jtf);
+
     container.add(north , BorderLayout.NORTH);
     Menu.item3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
@@ -97,7 +94,12 @@ public class Window extends JFrame implements ActionListener{
     split.setDividerLocation(200);
     getContentPane().add(split, BorderLayout.CENTER);
     setJMenuBar(menu);
-    new Soundd().start();
+    jtf = new JTextField();
+    south.add(jtf);
+    jtf.setPreferredSize(new Dimension(30, 30));
+    jtf.addKeyListener(new ControllerKey(this , p ));
+    north.add(jtf);
+    //new Soundd().start();
     setVisible(true);
   }
 

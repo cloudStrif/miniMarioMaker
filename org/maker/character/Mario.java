@@ -10,6 +10,10 @@ public class Mario {
   int posX ;
   int posY ;
 
+  public String actual = "" ; //Actual srpite of the character
+
+  ParserX parse ;
+
   public void mario(int life , int sens){
     // Later gestion  mario
   }
@@ -17,8 +21,9 @@ public class Mario {
   public  Mario(int x , int y){
       posX=x;
       posY=y;
-      ParserX parse = new ParserX("org/maker/MiniParsing/mario.data");
+      parse = new ParserX("org/maker/MiniParsing/mario.data");
       parse.tabSprite() ;//stock datas
+      this.actual = parse.tab[parse.tab.length - 2] ;
   }
 
 }

@@ -4,7 +4,8 @@ import org.maker.levels.Importt ;
 
 public class ParserX {
   String title = "" ;
-  String [] tab ;
+  public String [] tab ;
+
   public ParserX(String title){
     this.title=title ;
   }
@@ -18,6 +19,8 @@ public class ParserX {
       System.out.println(tab[o]+"  " + o);
     }
   }
+
+
 
   public void analyseXML(String name){
       String doc=Importt.af(name);

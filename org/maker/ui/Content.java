@@ -20,7 +20,7 @@ import java.awt.Image;
 public class Content extends JPanel{
 
   public static Grid grid ;
-  Mario mario ;
+  public Mario mario ;
 
 
   int x = 0 ;

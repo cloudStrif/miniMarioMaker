@@ -25,6 +25,8 @@ public class ControllerKey implements KeyListener {
 
   public void keyPressed(KeyEvent arg0) {
     System.out.println("Touch Keyboard");
+    this.con.mario.actual = this.con.mario.parse.tab[2];
+    this.con.repaint() ;
   }
 
 

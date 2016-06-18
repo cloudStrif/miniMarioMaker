@@ -12,7 +12,7 @@ public class Mario {
 
   public String actual = "" ; //Actual srpite of the character
 
-  ParserX parse ;
+  public ParserX parse ;
 
   public void mario(int life , int sens){
     // Later gestion  mario
